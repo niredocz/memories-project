@@ -29,7 +29,6 @@ const App = () => {
                             <Posts />
                         </Grid>
                         <Grid item xs={12} sm={4}>
-                            <h1>Grid 2</h1>
                             <Form />
                         </Grid>
                     </Grid>

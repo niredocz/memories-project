@@ -13,7 +13,6 @@ function Posts() {
         <>
         <h1>POSTS</h1>
         <Post />
-        <Post />
         </>
     );
 }
