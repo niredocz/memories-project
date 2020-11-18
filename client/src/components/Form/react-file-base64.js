@@ -40,7 +40,6 @@ export default class FileBase64 extends React.Component {
 
         // Push it to the state
         allFiles.push(fileInfo);
-
         // If all files have been proceed
         if(allFiles.length === files.length){
           // Apply Callback function

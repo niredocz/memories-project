@@ -6,6 +6,8 @@ import FileBase64 from './react-file-base64.js';
 import useStyles from './styles';
 import { createPost } from '../../actions/posts'
 
+    
+
 function Form() {
     const [postData, setPostData] = useState({ creator: '', title: '', message: '', tags: '', selectedFile: '' });
     const classes = useStyles();
@@ -19,7 +21,6 @@ function Form() {
     const clear = () => {
 
     }
-    
     return(
         <Paper className={classes.paper}>
             <form autoComplete="off" noValidate className={`${classes.root} ${classes.form}`} onSubmit={handleSubmit}>
