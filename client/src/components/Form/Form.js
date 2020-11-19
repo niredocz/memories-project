@@ -4,8 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import FileBase from 'react-file-base64';
 
 import useStyles from './styles';
-import { createPost, updatePost } from '../../actions/posts'
-// import { updatePost } from '../../../../server/controllers/posts';
+import { createPost, updatePost } from '../../actions/posts';
 
 
 function Form({ currentId, setCurrentId }) {
