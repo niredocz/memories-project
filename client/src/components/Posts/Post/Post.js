@@ -3,12 +3,12 @@ import { Card, CardActions, CardContent, CardMedia, Button, Typography } from '@
 import ThumbUpAltIcon from '@material-ui/icons/ThumbUpAlt';
 import DeleteIcon from '@material-ui/icons/Delete';
 import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
-import moment from 'moment';
+import Moment from 'react-moment';
 // import { useDispatch } from 'react-redux';
 
 import useStyles from './style';
 
-function Post({ post }) {
+function Post({ post, setCurrentId }) {
     // const dispatch = useDispatch();
     const classes = useStyles();
     return(
@@ -16,10 +16,12 @@ function Post({ post }) {
             <CardMedia style={{height: 0, paddingTop: '56.25%'}} className={classes.media} image={post.selectedFile} title={post.title} />
             <div className={classes.overlay}>
                 <Typography variant="h6">{post.creator}</Typography>
-                <Typography variant="body2">{moment(post.createdAt).fromNow()}</Typography>
+                <Typography variant="body2">
+                    <Moment fromNow>{post.createdAt}</Moment>
+                </Typography>
             </div>
             <div className={classes.overlay2}>
-                <Button style={{color: 'white'}} size="small" onClick={() => {}}>
+                <Button style={{color: 'white'}} size="small" onClick={() => setCurrentId(post._id)}>
                     <MoreHorizIcon fontSize="default" />
                 </Button>
             </div>
@@ -31,15 +33,12 @@ function Post({ post }) {
             </CardContent>
             <CardActions className={classes.cardActions}>
                 <Button size="small" color="primary" onClick = {() => {}}>
-                    <ThumbUpAltIcon fontSize="small" />
-                    Like
-                    {post.likeCount}
+                    <ThumbUpAltIcon fontSize="small" />Like  {post.likeCount}
                 </Button>
             </CardActions>
             <CardActions className={classes.cardActions}>
                 <Button size="small" color="primary" onClick = {() => {}}>
-                    <DeleteIcon fontSize="small" />
-                    Delete
+                    <DeleteIcon fontSize="small" />Delete
                 </Button>
             </CardActions>
         </Card>
