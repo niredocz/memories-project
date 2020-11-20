@@ -7,7 +7,7 @@ export const getPosts = () => async (dispatch) => {
 
         dispatch({ type: FETCH_ALL, payload: data })
     } catch (error) {
-        console.error(error.message);
+        console.error(error);
     }
 }
 
